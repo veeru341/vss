@@ -5,23 +5,17 @@ const DataContext = createContext();
 
 export default function UserData({ children }) {
     const [data, setData] = useState([]);
-    const [err, setErr] = useState("");
-    const [loading, setLoading] = useState(true);
+    const [user, setUser] = useState(false);
 
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users")
         .then(res => {
             setData(res.data);
-            setLoading(false);
         })
-        .catch(err => {
-            setErr(err.message);
-            setLoading(false);
-        });
     }, []);
 
     return (
-        <DataContext.Provider value={{ data, err, loading }}>
+        <DataContext.Provider value={{ data, user, setUser }}>
             {children}
         </DataContext.Provider>
     );

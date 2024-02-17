@@ -1,14 +1,16 @@
 import React, {useState} from "react";
+import {useData} from "../contexts/userData"
 
 export default function Login() {
 
-    const [loginDetails, setLoginDetails] = useState({
-        username : "",
-        password : ""
-    })
+    const {user, setUser} = useData();
 
-    const handleSubmit = () => {
-        
+    console.log("checking data", user)
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("checking user", user)
+        setUser(true)
     }
 
     return (
@@ -18,12 +20,12 @@ export default function Login() {
                     <h2 style={{color:"white"}}>Login</h2>
                     <div className="form-group">
                         <label htmlFor="email" style={{color:"white"}}>Email:</label>
-                        <input type="email" id="email" name="email" style={{width:"95%"}} required onChange={(e)=>setLoginDetails({...loginDetails, username : e.target.value})} />
+                        <input type="email" id="email" name="email" style={{width:"95%"}} />
                     </div>
 
                     <div className="form-group">
                         <label htmlFor="password" style={{color:"white"}}>Password:</label>
-                        <input type="password" id="password" name="password" style={{width:"95%"}} required  onChange={(e)=>setLoginDetails({...loginDetails, password : e.target.value})} />
+                        <input type="password" id="password" name="password" style={{width:"95%"}} />
                     </div>
 
                     <button type="submit">Login</button>
