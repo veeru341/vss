@@ -5,11 +5,9 @@ import {useData} from "../contexts/userData"
 const PrivateRoutes = () => {
 
     const {user} = useData();
-
-    const auth = user
     
     return(
-        auth.token ? <Outlet /> : <Navigate to="/login" />
+        user ? <Outlet /> : <Navigate to="/login" />
     )
 }
 

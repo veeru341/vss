@@ -4,9 +4,13 @@ import {useData} from "../contexts/userData"
 
 export default function Header(){
 
-    const {user} = useData();
+    const {user, setUser} = useData();
 
     console.log("checking user", user)
+
+    const handleLogout = () => {
+        setUser(false)
+    }
 
     return(
         <div style={{width:"100vw", backgroundColor:"black", color:"white", display:"flex", height:"60px", opacity:"0.7"}}>
@@ -20,7 +24,7 @@ export default function Header(){
                 <Link to="/products" style={{color:"white", textDecoration:"none"}}><li>Products</li></Link>
                 <Link to="/cart" style={{color:"white", textDecoration:"none"}}><li>Cart</li></Link>
                 {
-                    user ? <Link to="/" style={{color:"white", textDecoration:"none"}}><li>Logout</li></Link> : <Link to="/login" style={{color:"white", textDecoration:"none"}}><li>Login</li></Link>
+                    user ? <Link to="/" style={{color:"white", textDecoration:"none"}} onClick={handleLogout}><li>Logout</li></Link> : <Link to="/login" style={{color:"white", textDecoration:"none"}}><li>Login</li></Link>
                 }
                 <Link to="/users" style={{color:"white", textDecoration:"none"}}><li>Users</li></Link>
             </ul>

@@ -1,16 +1,16 @@
 import React, {useState} from "react";
 import {useData} from "../contexts/userData"
+import {useNavigate} from "react-router-dom"
 
 export default function Login() {
 
-    const {user, setUser} = useData();
-
-    console.log("checking data", user)
+    const {user, setUser} = useData()
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("checking user", user)
-        setUser(true)
+        setUser(true);
+        navigate("/")
     }
 
     return (
