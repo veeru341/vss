@@ -23,8 +23,8 @@ export default function App() {
                     <Route element={<PrivateRoutes />}>
                         <Route path="/products" element={<Products />} />
                         <Route path="/cart" element={<Cart />} />
-                        <Route path="users" element={<Users />} />
-                        <Route path="users/:id" element={<UserDetails />} />
+                        <Route path="/users" element={<Users />} />
+                        <Route path="/users/:id" element={<UserDetails />} />
                     </Route>
                 </Routes>
             </Router>

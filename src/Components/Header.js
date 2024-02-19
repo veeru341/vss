@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 import {useData} from "../contexts/userData"
+import logo from "../Images/logo3.png"
 
 export default function Header(){
 
@@ -13,9 +14,9 @@ export default function Header(){
     }
 
     return(
-        <div style={{width:"100vw", backgroundColor:"black", color:"white", display:"flex", height:"60px", opacity:"0.7"}}>
+        <div style={{width:"100%", backgroundColor:"black", color:"white", display:"flex", height:"60px", opacity:"0.7"}}>
             <div style={{width:"40%", display:"flex", justifyContent:"left", alignItems:"center"}}>
-                <h2 style={{color:"green", marginLeft:"80px"}}>VSS</h2>
+                <img src={logo} alt="logo" width="70px" height="60px" style={{marginLeft:"20px", borderRadius:"12px 0px 12px 0px"}} />
             </div>
             <nav className="navbar">
             <ul style={{     display:"flex", alignItems:"center", justifyContent:"space-around", listStyleType:"none"}}>

@@ -1,15 +1,18 @@
 .backgroundimage{
   background-image: url(./Images/loginbackground.jpg);
-  background-position: center center;
-  background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-size: cover;
   height: 100vh;
+  /* background-position: center center;
+  
+  
+  background-attachment: fixed;
+  
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1
+  z-index: -1 */
 }
 
 .formdiv{
@@ -110,4 +113,49 @@ button:hover {
 /* Hover effect for list items */
 .navbar li:hover {
   text-decoration: underline; /* Underlines the text */
+}
+
+.productdetails{
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border: 1px solid white
+}
+.productcart{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px
+}
+.productimg{
+  width: 250px;
+  height: 150px
+}
+
+.productdiv{
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin-top: 20px
+}
+
+.addbutton{
+  width: 150px;
+  height: 40px;
+  background-color: green;
+  color: white
+}
+.productpage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productheading{
+  color: green;
+  margin-top: 10px
 }

@@ -12,7 +12,7 @@ export default function Users() {
             {
                 data.map((ele) => {
                     const { id, name, email } = ele
-                    return (<Link to={`/users/${id}`}>
+                    return (<Link to={`/users/${id}?name=${name}&email=${email}`}>
                         <div style={{ backgroundColor: "green", width: "250px", height: "100px", cursor: "pointer", padding: "2px", color: "white", border: "2px solid red" }}>
                             <h5>{name}</h5>
                             <h6>{email}</h6>
