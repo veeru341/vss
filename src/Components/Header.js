@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import {useData} from "../contexts/userData"
 import logo from "../Images/logo3.png"
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Header(){
 
@@ -23,11 +24,11 @@ export default function Header(){
                 <Link to="/" style={{color:"white", textDecoration:"none"}}><li>Home</li></Link>
                 <Link to="/about" style={{color:"white", textDecoration:"none"}}><li>About</li></Link>
                 <Link to="/products" style={{color:"white", textDecoration:"none"}}><li>Products</li></Link>
-                <Link to="/cart" style={{color:"white", textDecoration:"none"}}><li>Cart</li></Link>
+                <Link to="/users" style={{color:"white", textDecoration:"none"}}><li>Users</li></Link>
                 {
                     user ? <Link to="/" style={{color:"white", textDecoration:"none"}} onClick={handleLogout}><li>Logout</li></Link> : <Link to="/login" style={{color:"white", textDecoration:"none"}}><li>Login</li></Link>
                 }
-                <Link to="/users" style={{color:"white", textDecoration:"none"}}><li>Users</li></Link>
+                <Link to="/cart" style={{color:"white", textDecoration:"none"}}><li><ShoppingCartIcon /></li></Link>
             </ul>
             </nav>
         </div>

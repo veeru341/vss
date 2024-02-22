@@ -10,7 +10,7 @@ export default function UserData({ children }) {
     useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users")
         .then(res => {
-            setData(res.data);
+           setData(res.data);
         })
     }, []);
 
